@@ -3,4 +3,4 @@ delim = ""
 for i in range(97, 123):
     if i == 122:
         delim = "\n"
-    print(chr(i), end=delim)
+    print("{}".format(chr(i)), end=delim)
