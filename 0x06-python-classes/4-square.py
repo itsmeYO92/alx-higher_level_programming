@@ -10,7 +10,7 @@ Square class:
 
 
 class Square:
-    """class square"""
+    """class representing a square"""
 
     @size.setter
     def size(self, value):
