@@ -1,19 +1,11 @@
 #!/usr/bin/python3
-"""
-This module defines a Square class.
-
-Square class:
-- Represents a square with a given size.
-- Provides methods to calculate the area
-  and access/modify the size of the square.
-"""
+""" This module defines a Square class. """
 
 
 class Square:
     """class representing a square"""
 
     def __init__(self, size=0):
-        """init"""
         self.__size = size
 
     @size.setter
@@ -32,5 +24,4 @@ class Square:
 
     @property
     def size(self):
-        """getter"""
         return self.__size
