@@ -12,9 +12,12 @@ Square class:
 class Square:
     """class representing a square"""
 
+    def __init__(self, size=0):
+        """init"""
+        self.__size = size
+
     @size.setter
     def size(self, value):
-        """setter"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -26,10 +29,6 @@ class Square:
         """area of a square"""
 
         return ((self.__size) ** 2)
-
-    def __init__(self, size=0):
-        """init"""
-        self.__size = size
 
     @property
     def size(self):
