@@ -3,10 +3,11 @@
 
 
 class Square:
-    """init"""
+    """class square"""
 
     @size.setter
     def size(self, value):
+        """setter"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -20,8 +21,10 @@ class Square:
         return ((self.__size) ** 2)
 
     def __init__(self, size=0):
+        """init"""
         self.__size = size
 
     @property
     def size(self):
+        """getter"""
         return self.__size
