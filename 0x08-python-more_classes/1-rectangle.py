@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-   Rectangle module - a module that defines a rectangle
+   1-rectangle module - a module that defines a rectangle
+   class Rectangle()
 """
 
 
 class Rectangle:
     """
-       Rectangle class definition
+       Rectangle class definitioni - defines a rectangle
     """
     def __init__(self, width=0, height=0):
         """
