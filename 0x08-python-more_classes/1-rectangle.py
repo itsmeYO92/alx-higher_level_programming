@@ -10,9 +10,6 @@ class Rectangle:
        Rectangle class definitioni - defines a rectangle
     """
     def __init__(self, width=0, height=0):
-        """
-            initialisation function
-        """
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if type(height) is not int:
@@ -27,16 +24,10 @@ class Rectangle:
 
     @proprety
     def width(self):
-        """
-           width getter
-        """
         return (self.width)
 
     @width.setter
     def width(self, value):
-        """
-            width setter
-        """
 
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -47,16 +38,10 @@ class Rectangle:
 
     @proprety
     def height(self):
-        """
-           height getter
-        """
         return (self.height)
 
     @height.setter
     def height(self, value):
-        """
-           height setter
-        """
 
         if type(value) is not int:
             raise TypeError("height must be an integer")
