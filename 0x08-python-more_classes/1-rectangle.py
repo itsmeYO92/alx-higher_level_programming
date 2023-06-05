@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-   1-rectangle module - a module that defines a rectangle
-   class Rectangle()
+This is '1-rectangle' module.
+Functions and Classes:
+    class Rectangle()
 """
 
 
 class Rectangle:
-    """
-       Rectangle class definitioni - defines a rectangle
-    """
+    """representing a rectangle"""
+
     def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError("width must be an integer")
@@ -22,7 +22,7 @@ class Rectangle:
         self.height = height
         self.width = width
 
-    @proprety
+    @property
     def width(self):
         return (self.width)
 
@@ -36,7 +36,7 @@ class Rectangle:
 
         self.height = value
 
-    @proprety
+    @property
     def height(self):
         return (self.height)
 
