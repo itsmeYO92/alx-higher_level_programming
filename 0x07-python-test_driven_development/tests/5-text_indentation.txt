@@ -1,0 +1,15 @@
+"""
+This is the add integer module.
+
+The module supplies one function, add_integer(),
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("this is? a test:bro")
+this is
+<BLANKLINE>
+a test
+<BLANKLINE>
+bro
+
+"""
