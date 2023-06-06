@@ -1,0 +1,25 @@
+"""
+This is the add integer module.
+
+The module supplies one function, add_integer(),
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("ayoub", "aboutarbouch")
+My name is ayoub aboutarbouch
+
+>>> say_my_name("ayoub")
+My name is ayoub 
+
+>>> say_my_name(34, "aboutarbouch")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("ayoub", 6)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name("")
+My name is  
+
+"""
