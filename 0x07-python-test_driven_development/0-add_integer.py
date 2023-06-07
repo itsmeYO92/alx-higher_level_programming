@@ -6,9 +6,7 @@
 
 
 def add_integer(a, b=98):
-    """
-       return the value of the addition of two integers
-    """
+    """ return the value of the addition of two integers """
 
     if type(a) not in [int, float]:
         raise TypeError("a must be an integer")

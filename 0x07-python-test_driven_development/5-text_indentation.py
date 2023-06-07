@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-    divide matrix module
-"""
+""" divide matrix module """
+
 
 def text_indentation(text):
     """
@@ -25,4 +24,4 @@ def text_indentation(text):
         else:
             new_text += i
             changed = False
-    print(new_text)        
+    print(new_text)

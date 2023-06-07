@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-    divide matrix module
-"""
+""" divide matrix module """
 
 
 def print_square(size):
