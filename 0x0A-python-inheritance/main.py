@@ -1,11 +1,7 @@
 #!/usr/bin/python3
+Rectangle = __import__('9-rectangle').Rectangle
 
-is_same_class = __import__('2-is_same_class').is_same_class
+r = Rectangle(3, 5)
 
-a = 1
-if is_same_class(a, int):
-    print("{} is an instance of the class {}".format(a, int.__name__))
-if is_same_class(a, float):
-    print("{} is an instance of the class {}".format(a, float.__name__))
-if is_same_class(a, object):
-    print("{} is an instance of the class {}".format(a, object.__name__))
+print(r)
+print(r.area())
