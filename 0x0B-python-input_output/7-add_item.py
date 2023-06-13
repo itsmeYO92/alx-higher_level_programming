@@ -18,4 +18,4 @@ for i, arg in enumerate(arguments):
     if i != 0:
         plist.append(arg)
 
-save_to_json_file(plist, "add_items.json")
+save_to_json_file(plist, "add_item.json")
