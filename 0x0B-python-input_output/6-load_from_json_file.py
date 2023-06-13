@@ -5,9 +5,9 @@
 import json
 
 
-def save_to_json_file(my_obj, filename):
+def load_from_json_file(filename):
     """ write a text file """
-    with open(filename, mode="w") as f:
-        nb = json.dump(my_obj, f)
+    with open(filename, mode="r") as f:
+        nb = json.load(f)
     f.close()
     return nb
