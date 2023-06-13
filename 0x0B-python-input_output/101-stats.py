@@ -3,6 +3,7 @@
 
 
 import sys
+import traceback
 
 
 stats = {"200": 0, "301": 0, "400": 0, "401": 0,
@@ -14,7 +15,8 @@ line_count = 0
 def print_stats(stats={}):
     print("File size: {}".format(size))
     for key, value in stats.items():
-        print("{}: {}".format(key, value))
+        if value != 0:
+            print("{}: {}".format(key, value))
 
 
 try:
