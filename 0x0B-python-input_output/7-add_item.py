@@ -9,8 +9,8 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 
 arguments = sys.argv
-if os.path.exists("add_items.json"):
-    plist = load_from_json_file("add_items.json")
+if os.path.exists("add_item.json"):
+    plist = load_from_json_file("add_item.json")
 else:
     plist = []
 
