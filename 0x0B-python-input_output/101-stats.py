@@ -8,7 +8,7 @@ import sys
 stats = {"200": 0, "301": 0, "400": 0, "401": 0,
          "403": 0, "404": 0, "405": 0, "500": 0}
 size = 0
-line_count = 1
+line_count = 0
 
 
 def print_stats(stats={}):
@@ -25,6 +25,6 @@ try:
         line_count += 1
         if line_count == 10:
             print_stats(stats)
-            line_count = 1
+            line_count = 0
 except KeyboardInterrupt:
     print_stats(stats)
