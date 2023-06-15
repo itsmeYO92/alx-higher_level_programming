@@ -23,7 +23,7 @@ class Rectangle(Base):
             if type(arg) is not int:
                 raise TypeError("{} must be an integer".format(key))
 
-            if key in ["width", "height"] and arg <= 0:
+            if key in ["size", "width", "height"] and arg <= 0:
                 raise ValueError("{} must be > 0".format(key))
 
             if key in ["x", "y"] and arg < 0:
