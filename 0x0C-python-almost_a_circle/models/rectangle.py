@@ -92,3 +92,10 @@ class Rectangle(Base):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        dictionary = {"id": self.id}
+        for key, arg in self.__dict__["_Rectangle__args"].items():
+            dictionary[key] = arg
+        return dictionary
+        
