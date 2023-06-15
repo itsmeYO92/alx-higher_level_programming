@@ -79,3 +79,14 @@ class SquareTest(unittest.TestCase):
         r1.update(89, 2, 4, 5)
         self.assertEqual(str(r1), "[Square] (89) 4/5 - 2")
 
+
+    def test_to_dictionary(self):
+        r1 = Square(10, 2, 1)
+        r1.update(1)
+        r1_dictionary = r1.to_dictionary()
+        self.assertEqual(r1_dictionary, {'x': 2, 'y': 1, 'id': 1, 'size': 10})
+
+        r1.update(8)
+        r1_dictionary = r1.to_dictionary()
+        self.assertNotEqual(r1_dictionary, {'x': 2, 'y': 1, 'id': 1, 'size': 10})
+
