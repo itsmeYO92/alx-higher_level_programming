@@ -69,3 +69,10 @@ class RectangleTest(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             r.y = -12
+
+    def test_area(self):
+        r1 = Rectangle(3, 2)
+        self.assertEqual(r1.area(), 6)
+        r1 = Rectangle(10, 10)
+        self.assertEqual(r1.area(), 100)
+

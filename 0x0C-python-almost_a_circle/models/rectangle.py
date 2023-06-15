@@ -65,4 +65,6 @@ class Rectangle(Base):
         self.is_valide_int(**{"y": y})
         self.__y = y
 
-
+    def area(self):
+        """ returns the area of the rectangle """
+        return self.__height * self.__width
