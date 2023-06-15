@@ -22,5 +22,47 @@ class Rectangle(Base):
         for key, arg in kwargs.items():
             if type(arg) is not int:
                 raise TypeError("{} must be an integer".format(key))
+
             if key in ["width", "height"] and arg <= 0:
-                raise ValueError("{} must be bigger than 0".format(key))
+                raise ValueError("{} must be > 0".format(key))
+
+            if key in ["x", "y"] and arg < 0:
+                raise ValueError("{} must be > 0".format(key))
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        self.is_valide_int(**{"width": width})
+        self.__width = width
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        self.is_valide_int(**{"height": height})
+        self.__height = height
+
+    @property
+    def x(self):
+        return self.__x
+
+    @x.setter
+    def x(self, x):
+        self.is_valide_int(**{"x": x})
+        self.__x = x
+
+    @property
+    def y(self):
+        return self.__y
+
+    @y.setter
+    def y(self, y):
+        self.is_valide_int(**{"y": y})
+        self.__y = y
+
+

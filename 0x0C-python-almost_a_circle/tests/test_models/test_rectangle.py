@@ -28,3 +28,44 @@ class RectangleTest(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             r1 = Rectangle(10, -2)
+
+    def test_geters_setters(self):
+        r = Rectangle(10, 11)
+        self.assertEqual(r.x, 0)
+        self.assertEqual(r.y, 0)
+        self.assertEqual(r.height, 11)
+        self.assertEqual(r.width, 10)
+
+        r.height = 15
+        self.assertEqual(r.height, 15)
+        r.width = 13
+        self.assertEqual(r.width, 13)
+
+        r.x = 15
+        self.assertEqual(r.x, 15)
+        r.y = 13
+        self.assertEqual(r.y, 13)
+
+        with self.assertRaises(TypeError):
+            r.width = "str"
+
+        with self.assertRaises(TypeError):
+            r.height = "str"
+
+        with self.assertRaises(ValueError):
+            r.width = -12
+
+        with self.assertRaises(ValueError):
+            r.height = -12
+
+        with self.assertRaises(TypeError):
+            r.x = "str"
+
+        with self.assertRaises(TypeError):
+            r.y = "str"
+
+        with self.assertRaises(ValueError):
+            r.x = -12
+
+        with self.assertRaises(ValueError):
+            r.y = -12
