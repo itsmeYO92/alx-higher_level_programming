@@ -25,3 +25,18 @@ class Square(Rectangle):
         self.is_valide_int(**{"size": size})
         self.width = size
         self.height = size
+
+    def update(self, *args, **kwargs):
+        """ Update a rectangle """
+        if args:
+           keys = ["id", "size", "x", "y"]
+           i = 0
+           for arg in args:
+               setattr(self, keys[i], arg)
+               i += 1
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+    
+        
