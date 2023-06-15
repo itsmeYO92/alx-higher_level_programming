@@ -38,5 +38,12 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        to_dict = super().to_dictionary()
+        to_dict["size"] = to_dict["width"]
+        del to_dict["width"]
+        del to_dict["height"]
+        return to_dict
     
         
