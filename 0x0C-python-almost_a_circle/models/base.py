@@ -20,5 +20,5 @@ class Base():
         """return JSON representation of an object"""
         if my_obj is None:
             return("[]")
-        return json.dumps(my_obj)
+        return '[' + json.dumps(my_obj) + ']'
 
