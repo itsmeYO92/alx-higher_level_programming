@@ -88,7 +88,7 @@ class Base():
         return instance_list
 
     @classmethod
-    def load_from_csv(cls):
+    def load_from_file_csv(cls):
         file_name = cls.__name__ + ".csv"
         if file_name == "Rectangle.csv":
             keys = ["id", "width", "height", "x", "y"]
@@ -99,14 +99,29 @@ class Base():
         try:
             with open(file_name, "r", encoding="UTF-8", newline="") as f:
                 csv_content = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
-
+                for line in csv_content:
+                    d = {}
+                    for key in keys:
+                        d[key] = int(line[keys.index(key)])
+                        ilist.append(cls.create(**d))
+        
+            return ilist
+    
         except FileNotFoundError:
             return ilist
 
-        for line in csv_content:
-            d = {}
-            for key in keys:
-                d[key] = int(line[keys.index(key)])
-                ilist.append(cls.create(**d))
 
-        return ilist
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
