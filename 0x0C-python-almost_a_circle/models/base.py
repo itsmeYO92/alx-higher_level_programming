@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base():
@@ -85,3 +86,27 @@ class Base():
         for __dict in json_list:
             instance_list.append(cls.create(**__dict))
         return instance_list
+
+    @classmethod
+    def load_from_csv(cls):
+        file_name = cls.__name__ + ".csv"
+        if file_name == "Rectangle.csv":
+            keys = ["id", "width", "height", "x", "y"]
+        else:
+            keys = ["id", "size", "x", "y"]
+
+        ilist = []
+        try:
+            with open(file_name, "r", encoding="UTF-8", newline="") as f:
+                csv_content = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
+
+        except FileNotFoundError:
+            return ilist
+
+        for line in csv_content:
+            d = {}
+            for key in keys:
+                d[key] = int(line[keys.index(key)])
+                ilist.append(cls.create(**d))
+
+        return ilist
