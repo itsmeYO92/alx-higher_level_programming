@@ -46,3 +46,22 @@ class Base():
             return []
         return json.loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+
+        from models.square import Square
+        from models.rectangle import Rectangle
+
+
+        if dictionary:
+            if cls is Base:
+                dummy = cls()
+            elif cls is Square:
+                dummy = cls(1)
+            elif cls is Rectangle:
+                dummy = cls(1,1)
+            else:
+                return None
+
+            dummy.update(**dictionary)
+            return dummy
