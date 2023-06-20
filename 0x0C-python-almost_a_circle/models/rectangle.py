@@ -19,6 +19,7 @@ class Rectangle(Base):
         self.__y = y
 
     def is_valide_int(self, **kwargs):
+        """ checks if the arguments are of type int """
         for key, arg in kwargs.items():
             if type(arg) is not int:
                 raise TypeError("{} must be an integer".format(key))
@@ -94,6 +95,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """ return a dictionary of the object attributes """
         dictionary = {"id": self.id}
         for key, arg in self.__dict__["_Rectangle__args"].items():
             dictionary[key] = arg

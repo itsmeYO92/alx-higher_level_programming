@@ -21,7 +21,7 @@ class Base():
     def to_json_string(my_obj):
         """ return JSON representation of an object """
         if my_obj is None:
-            return("[]")
+            return "[]"
         return json.dumps(my_obj)
 
     @classmethod
@@ -54,14 +54,13 @@ class Base():
         from models.square import Square
         from models.rectangle import Rectangle
 
-
         if dictionary:
             if cls is Base:
                 dummy = cls()
             elif cls is Square:
                 dummy = cls(1)
             elif cls is Rectangle:
-                dummy = cls(1,1)
+                dummy = cls(1, 1)
             else:
                 return None
 
@@ -107,12 +106,11 @@ class Base():
                     for key in keys:
                         d[key] = int(line[keys.index(key)])
                         ilist.append(cls.create(**d))
-        
-            return ilist
-    
-        except FileNotFoundError:
+
             return ilist
 
+        except FileNotFoundError:
+            return ilist
 
     @classmethod
     def save_to_file_csv(cls, list_objs):

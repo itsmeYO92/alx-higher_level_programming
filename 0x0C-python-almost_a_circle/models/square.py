@@ -40,6 +40,7 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """ returns a dictionary of the object attributes """
         to_dict = super().to_dictionary()
         to_dict["size"] = to_dict["width"]
         del to_dict["width"]
