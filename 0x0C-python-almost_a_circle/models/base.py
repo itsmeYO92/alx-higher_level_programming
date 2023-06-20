@@ -7,6 +7,7 @@ import csv
 
 
 class Base():
+    """ Base class to manage base objects (Resctangle or square) """
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -18,7 +19,7 @@ class Base():
 
     @staticmethod
     def to_json_string(my_obj):
-        """return JSON representation of an object"""
+        """ return JSON representation of an object """
         if my_obj is None:
             return("[]")
         return json.dumps(my_obj)
@@ -49,7 +50,7 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-
+        """ create a base instance """
         from models.square import Square
         from models.rectangle import Rectangle
 
@@ -69,6 +70,7 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
+        """ load instences stored in a file as json """
         instance_list = []
 
         file_name = cls.__name__ + ".json"
@@ -89,6 +91,7 @@ class Base():
 
     @classmethod
     def load_from_file_csv(cls):
+        """ load instences stored in a file as csv """
         file_name = cls.__name__ + ".csv"
         if file_name == "Rectangle.csv":
             keys = ["id", "width", "height", "x", "y"]
@@ -113,6 +116,7 @@ class Base():
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """ save a list of instances to a file as csv """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
             if list_objs is None or list_objs == []:
