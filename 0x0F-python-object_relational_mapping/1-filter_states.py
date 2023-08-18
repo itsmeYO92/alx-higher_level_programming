@@ -17,7 +17,7 @@ if __name__ == '__main__':
         "localhost", db_args[1], db_args[2], db_args[3], port=3306)
 
     db_cursor = db.cursor()
-    db_cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    db_cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'")
 
     results = db_cursor.fetchall()
     for row in results:
