@@ -17,7 +17,7 @@ if __name__ == '__main__':
         "localhost", db_args[1], db_args[2], db_args[3], port=3306)
 
     db_cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}'".format(db_args[4])
+    query = "SELECT * FROM states WHERE BINARY name = '{}'".format(db_args[4])
     db_cursor.execute(query)
 
     results = db_cursor.fetchall()
