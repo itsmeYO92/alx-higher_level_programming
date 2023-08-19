@@ -24,7 +24,7 @@ if __name__ == '__main__':
         selects the states
     """
     db_args = sys.argv
-    if invalid_input(db_args[4]):
+    if len(db_args) < 5 or invalid_input(db_args[4]):
         exit()
 
     db = MySQLdb.connect(
