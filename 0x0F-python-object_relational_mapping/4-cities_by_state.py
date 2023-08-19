@@ -24,13 +24,12 @@ if __name__ == '__main__':
         selects the states
     """
     db_args = sys.argv
-    if invalid_input(db_args[4]):
-        exit()
     db = MySQLdb.connect(
         "localhost", db_args[1], db_args[2], db_args[3], port=3306)
 
     db_cursor = db.cursor()
-    query = "SELECT * FROM states WHERE BINARY name = '{}'".format(db_args[4])
+    query = "SELECT cities.id, cities.name, states.name FROM cities\
+            INNER JOIN states ON cities.state_id = states.id;"
     db_cursor.execute(query)
 
     results = db_cursor.fetchall()
