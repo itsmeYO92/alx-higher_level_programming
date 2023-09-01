@@ -9,9 +9,9 @@ if __name__ == "__main__":
     with urllib.request.urlopen(url) as response:
         content = response.read()
         my_str = '''Body response:
-        - type: {}
-        - content: {}
-        - utf8 content: {}'''.format(type(content),
-                                     content,
-                                     content.decode("utf-8"))
+\t- type: {}
+\t- content: {}
+\t- utf8 content: {}'''.format(type(content),
+                               content,
+                               content.decode("utf-8"))
         print(my_str)
