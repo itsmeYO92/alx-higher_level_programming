@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function factorial(a) {
+function factorial (a) {
   if (!a || a === 0) {
     return 1;
   }

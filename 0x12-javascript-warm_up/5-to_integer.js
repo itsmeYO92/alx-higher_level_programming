@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const arg_array = process.argv;
+const argArray = process.argv;
 
-let myVar = !parseInt(arg_array[2]) ? "Not a number" : `My number: ${parseInt(arg_array[2])}`
+const myVar = !parseInt(argArray[2]) ? 'Not a number' : `My number: ${parseInt(argArray[2])}`;
 console.log(myVar);

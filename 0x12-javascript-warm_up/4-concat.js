@@ -1,4 +1,4 @@
 #!/usr/bin/node
-const arg_array = process.argv;
+const argArray = process.argv;
 
-console.log(`${arg_array[2]} is ${arg_array[3]}`);
+console.log(`${argArray[2]} is ${argArray[3]}`);
