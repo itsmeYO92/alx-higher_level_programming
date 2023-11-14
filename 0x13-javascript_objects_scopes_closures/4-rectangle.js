@@ -8,7 +8,7 @@ class Rectangle {
     if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
-     }
+    }
   }
 
   print () {
@@ -18,7 +18,7 @@ class Rectangle {
   }
 
   rotate () {
-    let tmp = this.width;
+    const tmp = this.width;
     this.width = this.height;
     this.height = tmp;
   }
