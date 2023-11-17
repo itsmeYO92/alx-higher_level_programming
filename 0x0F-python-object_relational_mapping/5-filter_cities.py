@@ -33,7 +33,8 @@ if __name__ == '__main__':
     db_cursor = db.cursor()
     query = "SELECT cities.name FROM cities\
             INNER JOIN states ON cities.state_id = states.id\
-            WHERE BINARY states.name = '{}';".format(db_args[4])
+            WHERE BINARY states.name = '{}'\
+            ORDER BY cities.id ASC;".format(db_args[4])
     db_cursor.execute(query)
 
     results = db_cursor.fetchall()
