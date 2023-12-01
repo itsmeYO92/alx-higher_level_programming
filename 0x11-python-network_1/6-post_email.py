@@ -2,7 +2,6 @@
 """ a Python script that fetches a url"""
 
 import requests
-import urllib.parse
 import sys
 
 
