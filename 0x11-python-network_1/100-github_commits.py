@@ -13,5 +13,5 @@ if __name__ == "__main__":
     try:
         for i in range(0, 10):
             print("{}: {}".format(r[i]["sha"], r[i]["commit"]["author"]["name"]))
-    except:
+    except IndexError:
         pass
