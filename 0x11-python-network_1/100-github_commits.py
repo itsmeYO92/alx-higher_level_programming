@@ -3,7 +3,6 @@
 
 import requests
 import sys
-from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
@@ -11,5 +10,8 @@ if __name__ == "__main__":
     repo = sys.argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(user, repo)
     r = requests.get(url).json()
-    for i in range(0, 10):
-        print("{}: {}".format(r[i]["sha"], r[i]["commit"]["author"]["name"]))
+    try:
+        for i in range(0, 10):
+            print("{}: {}".format(r[i]["sha"], r[i]["commit"]["author"]["name"]))
+    except:
+        pass
