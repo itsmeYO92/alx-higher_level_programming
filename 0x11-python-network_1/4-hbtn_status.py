@@ -10,6 +10,5 @@ if __name__ == "__main__":
         content = response.read().decode("utf-8")
         my_str = '''Body response:
 \t- type: {}
-\t- content: {}'''.format(type(content),
-                               content)
+\t- content: {}'''.format(type(content), content)
         print(my_str)
