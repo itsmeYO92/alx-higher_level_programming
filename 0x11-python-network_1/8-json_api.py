@@ -15,5 +15,5 @@ if __name__ == "__main__":
     else:
         try:
             print("[{}] {}".format(r.get("id"), r.get("name")))
-        except ValueError:
+        except JSONDecodeError:
             print("Not a valide JSON")
